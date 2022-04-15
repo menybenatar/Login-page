@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/admin.css">
+    <title>Admin</title>
+  </head>
+  <body>
+    <body onload="init()" >
+        <script src="./js/service/storage.service.js"></script>
+        <script>
+            const user = loadFromStorage("currLoggenInUser");
+            if (!user || !user.isAdmin) window.location = "index.html";
+        </script>
+        <h1>Wellcom Back <span></span>!</h1>
+        <select class="sort" onchange="onSetSort(this.value)">
+            <option value="NAME">Name</option>
+            <option value="LAST_LOGIN">Last Login</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <td>userName</td>
+                    <td>Password</td>
+                    <td>lastLoginTime</td>
+                    <td>isAdmin</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button class="btn-logout" onclick="onLogOutAdmin()">LOGOT</button>
+    
+        <script src="./js/service/user.service.js"></script>
+
+        <script src="./js/service/admin.service.js"></script>
+        <script src="./js/controller-admin.js"></script>
+  </body>
+</html>

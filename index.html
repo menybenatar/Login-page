@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>save content</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body onload="init()">
+    <section class="sing-in">
+      <h1>Sign in!</h1>
+      <img src="./img/sign-in.png" id="sign-in-img" />
+      <div>
+        <h3>UserName</h3>
+        <input type="userName" placeholder="Enter Username" />
+      </div>
+      <div>
+        <h3>Password</h3>
+        <input type="Password" placeholder="Enter Password" />
+      </div>
+      <button class="btn-login" onclick="onLogin()">LOGIN</button>
+    </section>
+    <section class="after-login">
+      <h1 id="Wellcom-user">Wellcom <span></span>!</h1>
+      <div class="img-user"></div>
+      <button class="btn-logout" onclick="onLogOut()">LOGOT</button>
+    </section>
+    <script src="./js/service/storage.service.js"></script>
+    <script src="./js/service/user.service.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/controller-user.js"></script>
+    <script src="./js/controller-admin.js"></script>
+  </body>
+</html>
